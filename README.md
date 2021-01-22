@@ -2,17 +2,17 @@
 
 ## Visualization Results
 
-* Face alignment on 300W dataset
+* resnet101 训练结果 1
 
-![img1](https://github.com/cunjian/pytorch_face_landmark/blob/master/imgs/300w.png)
+![img1](https://github.com/xiaoxiaokaiyan/Protch_Transfer_learning_Pokmon/blob/main/resnet101%20test.PNG)
 
-* Semi-frontal face alignment on Menpo dataset
+* resnet101 训练结果 2
 
-![img1](https://github.com/cunjian/pytorch_face_landmark/blob/master/imgs/menpo_semi_frontal.png)
+![img1](https://github.com/xiaoxiaokaiyan/Protch_Transfer_learning_Pokmon/blob/main/resnet101%20test%20loss%20and%20acc.PNG)
 
-* Profile face alignment on Menpo dataset
+* resnet101 训练结果 3
 
-![img1](https://github.com/cunjian/pytorch_face_landmark/blob/master/imgs/menpo_profile.png)
+![img1](https://github.com/xiaoxiaokaiyan/Protch_Transfer_learning_Pokmon/blob/main/batch.jpg)
 
 
 
@@ -28,6 +28,9 @@
 ## References:
 * 深度学习与PyTorch入门实战---龙曲良
 
-  ​
 
+## Emphasize:
+* pokemon图片在“宝可梦数据集.pdf”百度云盘，下载后文件夹解压出来直接运行程序即可，具体位置看“预训练模型放的位置.PNG”
+* train_scratch.py文件是自己训练，train_transfer.py是使用resnet预训练模型
+* transfer所使用的预训练模型可以随时更换，具体看“transfer所使用的预训练模型可以随时更换，具体看本图片.PNG”
 
