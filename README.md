@@ -1,4 +1,4 @@
-#心得：此代码可以很好地体现了自己数据的分类，既有自训练模型，也有预训练模型，resnet18和resnet101可以随时换着预训练
+# 心得：此代码可以很好地体现了自己数据的分类，既有自训练模型，也有预训练模型，resnet18和resnet101可以随时换着预训练
 
 
 ## Visualization Results
@@ -39,7 +39,9 @@
 * 1.device = torch.device('cuda')  x,y = x.to(device), y.to(device)   的效果等同于  x,y = x.cuda(), y.cuda()，而且可以混用
 * 2.参数置于cuda和参数置于cpu的两种变量是不能放在一起运算的
 * 3.generate_image(D, G, xr.cpu(), epoch)，当xr被置于GPU之后，输出时应该将其.cpu()，重新回到cpu上
-* 4.model = nn.Sequential(*list(trained_model.children())[:-1], #[b, 512, 1, 1]
+* 4.注意加载预训练模型'resnet18'和'resnet101'的区别！！！！！！！！！！！！！！！！！
+```
+model = nn.Sequential(*list(trained_model.children())[:-1], #[b, 512, 1, 1]
                           Flatten(), # [b, 512, 1, 1] => [b, 512]                          ----------------->resnet18(pretrained=True)
                           nn.Linear(512, 5)
                           ).to(device)
@@ -49,4 +51,5 @@
                           nn.Linear(1024, 512)
                           nn.Linear(512, 5)
                           ).to(device)
-    注意两者的区别！！！！！！！！！！！！！！！！！
+    
+```
