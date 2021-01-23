@@ -34,10 +34,6 @@
 
 
 
-## References:
-* 深度学习与PyTorch入门实战---龙曲良
-
-
 ## Emphasize:
 * pokemon图片在“宝可梦数据集.pdf”百度云盘，下载后文件夹解压出来直接运行程序即可，具体位置看“预训练模型放的位置.PNG”
 * train_scratch.py文件是自己训练，train_transfer.py是使用resnet预训练模型
@@ -57,11 +53,12 @@
                           
     model = nn.Sequential(*list(trained_model.children())[:-1], #[b, 512, 1, 1]
                           Flatten(), # [b, 512, 1, 1] => [b, 512]                          ----------------->resnet101(pretrained=True)
-                          nn.Linear(1024, 512)
+                          nn.Linear(2048, 512)
                           nn.Linear(512, 5)
                           ).to(device)
  
 
 ```
 
-
+## References:
+* 深度学习与PyTorch入门实战---龙曲良
