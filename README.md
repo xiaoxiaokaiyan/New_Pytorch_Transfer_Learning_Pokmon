@@ -1,5 +1,13 @@
-# 心得：此代码可以很好地体现了自己数据的分类，既有自训练模型，也有预训练模型，resnet18和resnet101可以随时换着预训练
+# 心得：**此代码可以很好地体现了自己数据的分类，既有自训练模型，也有预训练模型，resnet18和resnet101可以随时换着预训练**
 
+## Dependencies:
+* Windows10
+* python==3.6.10
+* > GeForce GTX 1660TI
+* pytorch==1.0.0
+* torchvision==0.2.1
+* cuda100
+* numpy==1.19.5
 
 ## Visualization Results
 
@@ -41,6 +49,7 @@
 * 3.generate_image(D, G, xr.cpu(), epoch)，当xr被置于GPU之后，输出时应该将其.cpu()，重新回到cpu上
 * 4.注意加载预训练模型 `resnet18` 和 `resnet101` 的区别！！！！！！！！！！！！！！！！！
 ```
+
     model = nn.Sequential(*list(trained_model.children())[:-1], #[b, 512, 1, 1]
                           Flatten(), # [b, 512, 1, 1] => [b, 512]                          ----------------->resnet18(pretrained=True)
                           nn.Linear(512, 5)
@@ -51,12 +60,8 @@
                           nn.Linear(1024, 512)
                           nn.Linear(512, 5)
                           ).to(device)
-    
+ 
+
 ```
 
-## Dependencies:
-* > GeForce GTX 1660TI
-* pytorch==1.0.0
-* torchvision==0.2.1
-* cuda100
-* numpy==1.19.5
+
